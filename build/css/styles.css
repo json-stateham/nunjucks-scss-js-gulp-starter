@@ -1,0 +1,302 @@
+/* https://github.com/jensimmons/cssremedy */
+
+/* Global Remedies
+******************/
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1.00rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type='checkbox'],
+[type='radio'] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* 
+COLORS
+*/
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: inherit;
+  font-family: Arial, sans-serif;
+  color: #000;
+  background: #d3ffd3;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+Fluid Typography
+font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+*/
+
+.u-hidden {
+  display: none;
+}
+
+.u-visible {
+  display: block;
+}
+
+.u-full-bleed-block {
+  margin: 0 calc(50% - 50vw);
+}
+
+.btn-text {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+  color: #3A68DF;
+  background: transparent;
+  border: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-text:focus {
+  outline: none;
+}

@@ -1,0 +1,21 @@
+@mixin btn($width, $height, $background, $color) {
+  display: inline-flex;
+  align-items: center;
+  width: $width;
+  height: $height;
+  color: $color;
+  background: $background;
+  border: none;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-text {
+  @include btn(fit-content, auto, transparent, $clr-accent);
+}
